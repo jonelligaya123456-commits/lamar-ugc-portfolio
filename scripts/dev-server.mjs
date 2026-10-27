@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 const PORT = Number(process.env.PORT || 4180);
 
 const MIME_TYPES = {
@@ -53,7 +53,6 @@ const server = http.createServer((req, res) => {
       let end = parts[1] ? parseInt(parts[1], 10) : stat.size - 1;
 
       if (!parts[0] && parts[1]) {
-        // Suffix byte-range request (e.g. bytes=-500)
         const suffixLength = parseInt(parts[1], 10);
         start = Math.max(0, stat.size - suffixLength);
         end = stat.size - 1;
