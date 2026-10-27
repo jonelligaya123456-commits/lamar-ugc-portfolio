@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaMar Joevell — UGC Creator, Fashion Enthusiast &amp; Visual Storyteller</title>
+  <meta name="description" content="LaMar Joevell (@lamarsfashion) — San Diego-based UGC creator, fashion stylist, and visual storyteller creating authentic, high-converting video content for modern brands." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D3223'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' fill='%23F5F2EB' font-family='Impact,sans-serif' font-size='32' letter-spacing='1'%3ELJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preload" as="image" href="/media/1U6A5935.JPG" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600;700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Floating Custom Cursor Pill for Selected Work -->
+  <div id="reelCursorPill" class="reel-cursor-pill" aria-hidden="true">
+    <span class="cursor-pill-dot"></span>
+    <span id="reelCursorText">WATCH REEL</span>
+  </div>
+
+  <!-- Top Sticky Editorial Navbar -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand-logo" aria-label="LaMar Joevell Home">LaMar Joevell</a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#work" data-nav-section="work">Work</a>
+        <a href="#services" data-nav-section="services">Services</a>
+        <a href="#about" data-nav-section="about">About</a>
+        <a href="#results" data-nav-section="results">Results</a>
+        <a href="#contact" data-nav-section="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" class="ig-handle-link">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@lamarsfashion</span>
+        </a>
+
+        <!-- Only shown when ?edit is active or toggled via footer "Creator Studio" -->
+        <button type="button" class="studio-btn is-hidden" id="openStudioBtn" title="Upload Videos or Swap Placeholder Photos">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>Studio</span>
+        </button>
+
+        <a href="#contact" class="btn-olive btn-sm nav-cta-desktop magnetic-btn">LET'S WORK</a>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer is-hidden" id="mobileNavDrawer">
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="#work" class="mobile-nav-link">Work</a>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#results" class="mobile-nav-link">Results</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" class="ig-handle-link" style="display:inline-flex;">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@lamarsfashion</span>
+        </a>
+        <a href="#contact" class="btn-olive btn-sm mobile-nav-link">LET'S WORK</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section is-visible" data-reveal-section>
+      <div class="container hero-grid">
+        <!-- Left Copy Column -->
+        <div class="hero-copy">
+          <div class="eyebrow-row">
+            <span class="eyebrow-text">SAN DIEGO, CALIFORNIA</span>
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </div>
+
+          <h1 class="hero-title" aria-label="Content That Feels Real.">
+            <span class="hero-line-mask"><span class="hero-line-inner" style="--line-idx: 0">CONTENT</span></span>
+            <span class="hero-line-mask"><span class="hero-line-inner" style="--line-idx: 1">THAT FEELS</span></span>
+            <span class="hero-line-mask"><span class="hero-line-inner" style="--line-idx: 2">REAL.</span></span>
+          </h1>
+
+          <p class="hero-pillars hero-fade-item" style="--fade-idx: 1">
+            <span>FASHION</span>
+            <span class="dot" aria-hidden="true">&bull;</span>
+            <span>LIFESTYLE</span>
+            <span class="dot" aria-hidden="true">&bull;</span>
+            <span>PRODUCT STORYTELLING</span>
+          </p>
+
+          <p class="hero-lead hero-fade-item" style="--fade-idx: 2">
+            I create authentic, high-converting UGC that helps brands show up, stand out, and connect with real people.
+          </p>
+
+          <div class="hero-cta-wrap hero-fade-item" style="--fade-idx: 3">
+            <a href="#contact" class="btn-olive btn-lg magnetic-btn">
+              <span>LET'S WORK TOGETHER</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="hero-socials hero-fade-item" style="--fade-idx: 4">
+            <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (@lamarsfashion)" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#contact" aria-label="TikTok" class="social-icon-link" title="TikTok — @lamarsfashion">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            </a>
+            <a href="#contact" aria-label="YouTube" class="social-icon-link" title="YouTube — @lamarsfashion">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#contact" aria-label="Pinterest" class="social-icon-link" title="Pinterest — @lamarsfashion">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.44l1.4-5.95s-.36-.72-.36-1.78c0-1.66.96-2.9 2.16-2.9 1.02 0 1.51.77 1.51 1.68 0 1.02-.65 2.56-.99 3.98-.28 1.19.6 2.16 1.77 2.16 2.13 0 3.77-2.25 3.77-5.5 0-2.87-2.06-4.88-5.01-4.88-3.41 0-5.42 2.56-5.42 5.2 0 1.03.4 2.13.89 2.73.1.12.11.22.08.34l-.33 1.36c-.05.22-.18.27-.41.16-1.56-.72-2.53-3-2.53-4.83 0-3.93 2.86-7.55 8.24-7.55 4.33 0 7.7 3.08 7.7 7.2 0 4.3-2.71 7.76-6.47 7.76-1.26 0-2.45-.66-2.86-1.44l-.78 2.97c-.28 1.08-1.04 2.44-1.55 3.27A12 12 0 1 0 12 0z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" class="social-handle-text">@lamarsfashion</a>
+          </div>
+        </div>
+
+        <!-- Right Visual Portrait Column -->
+        <div class="hero-visual">
+          <div class="hero-portrait-frame">
+            <img
+              id="heroPortraitImg"
+              src="/media/1U6A5935.JPG"
+              alt="LaMar Joevell standing outdoors in black tee, beanie, and sunglasses"
+              fetchpriority="high"
+              width="900"
+              height="1125"
+              class="hero-portrait-img"
+            />
+          </div>
+
+          <!-- Handwritten floating callout with staggered ink reveal -->
+          <div class="hero-script-note" aria-hidden="true">
+            <span class="script-word" style="--w-idx: 0">Real</span>
+            <span class="script-word indent-1" style="--w-idx: 1">People.</span>
+            <span class="script-word" style="--w-idx: 2">Real</span>
+            <span class="script-word indent-1" style="--w-idx: 3">Style.</span>
+            <span class="script-word" style="--w-idx: 4">Real</span>
+            <span class="script-word indent-2" style="--w-idx: 5">Results.</span>
+          </div>
+
+          <!-- Editorial bottom-right stamp -->
+          <div class="hero-stamp">
+            <span class="stamp-rule" aria-hidden="true"></span>
+            <p>UGC CREATOR</p>
+            <p>FASHION ENTHUSIAST</p>
+            <p>STORYTELLER</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SELECTED WORK SECTION -->
+    <section class="work-section is-visible" id="work" data-reveal-section>
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="eyebrow-row">
+              <span class="eyebrow-text">FEATURED CONTENT</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h2 class="section-title">SELECTED WORK</h2>
+          </div>
+
+          <div class="work-header-right">
+            <p class="section-subtitle">
+              A mix of UGC ads, organic content, styling, and product storytelling. Real brands. Real creative. Real results.
+            </p>
+            <div class="carousel-controls" aria-label="Carousel Navigation">
+              <button type="button" class="carousel-arrow" id="workPrevBtn" aria-label="Previous videos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button type="button" class="carousel-arrow" id="workNextBtn" aria-label="Next videos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6-up Vertical Reel Carousel (populated from single source of truth in app.js) -->
+        <div class="work-carousel-track" id="workCarouselTrack" aria-live="polite"></div>
+
+        <!-- Editorial Carousel Scroll Progress Bar -->
+        <div class="carousel-progress-track" id="carouselProgressTrack" title="Click or drag to scroll videos">
+          <div class="carousel-progress-fill" id="carouselProgressFill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES / WHAT I CREATE SECTION -->
+    <section class="services-section" id="services" data-reveal-section>
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="eyebrow-row">
+              <span class="eyebrow-text">SERVICES</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h2 class="section-title">WHAT I CREATE</h2>
+          </div>
+
+          <p class="section-subtitle">
+            Versatile content for modern brands. From scroll-stopping ads to authentic organic videos, I create content that fits your goals.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: UGC Ads -->
+          <article class="service-card reveal-stagger" style="--stagger-idx: 0">
+            <div class="service-icon icon-megaphone" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M25 6L11 12H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h5l14 6V6z"></path>
+                <path d="M9 20l2 7h3l-1.5-7"></path>
+                <path class="soundwave" d="M28 12c1.5 1.5 1.5 6.5 0 8"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">UGC ADS</h3>
+            <p class="service-desc">
+              Short-form, high-converting videos made for paid media. Hook-driven, authentic, and on-brand.
+            </p>
+          </article>
+
+          <!-- Card 2: Organic Videos -->
+          <article class="service-card reveal-stagger" style="--stagger-idx: 1">
+            <div class="service-icon icon-phone" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="3" width="16" height="26" rx="3"></rect>
+                <line x1="14" y1="7" x2="18" y2="7"></line>
+                <circle cx="16" cy="25" r="1"></circle>
+              </svg>
+            </div>
+            <h3 class="service-title">ORGANIC VIDEOS</h3>
+            <p class="service-desc">
+              Natural, engaging content for TikTok, Instagram Reels and YouTube Shorts.
+            </p>
+          </article>
+
+          <!-- Card 3: Styling & Fashion -->
+          <article class="service-card reveal-stagger" style="--stagger-idx: 2">
+            <div class="service-icon icon-hanger" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 9a3 3 0 1 0-3-3c0 1.5 3 2.5 3 5v2"></path>
+                <path d="M16 13L4 21a2 2 0 0 0 1.1 3.7h21.8A2 2 0 0 0 28 21L16 13z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">STYLING &amp; FASHION</h3>
+            <p class="service-desc">
+              Outfit ideas, lookbooks, thrift flips and seasonal style content.
+            </p>
+          </article>
+
+          <!-- Card 4: Product Demonstrations -->
+          <article class="service-card reveal-stagger" style="--stagger-idx: 3">
+            <div class="service-icon icon-box" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M27 10L16 4 5 10v12l11 6 11-6V10z"></path>
+                <polyline points="5 10 16 16 27 10"></polyline>
+                <line x1="16" y1="28" x2="16" y2="16"></line>
+                <line x1="10.5" y1="7" x2="21.5" y2="13"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">PRODUCT<br />DEMONSTRATIONS</h3>
+            <p class="service-desc">
+              Clear, authentic product showcases that highlight real use and benefits.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT LAMAR SECTION -->
+    <section class="about-section" id="about" data-reveal-section>
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img
+            id="aboutPortraitImg"
+            src="/media/1U6A5921.JPG"
+            alt="LaMar Joevell in studio monochrome streetwear outfit"
+            loading="lazy"
+            width="800"
+            height="960"
+            class="about-img"
+          />
+          <div class="about-script-overlay" aria-hidden="true">
+            <span class="script-word" style="--w-idx: 0">Style</span>
+            <span class="script-word" style="--w-idx: 1">Creates</span>
+            <span class="script-word" style="--w-idx: 2">Opportunities</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="eyebrow-row">
+            <span class="eyebrow-text">GET TO KNOW ME</span>
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </div>
+
+          <h2 class="section-title">ABOUT LAMAR</h2>
+
+          <div class="about-prose">
+            <p>
+              I'm <strong>LaMar Joevell</strong> &mdash; a fashion enthusiast, content creator, and UGC specialist based in San Diego, California.
+            </p>
+            <p>
+              I create authentic, relatable, and stylish content that helps brands connect with real people. My background in fashion, personal style, and visual storytelling allows me to bring products to life in a way that feels natural, engaging, and true to the brand.
+            </p>
+            <p>
+              Whether it's a paid ad, organic social content, or a full campaign, I focus on creating videos that not only look good, but also drive engagement and inspire action.
+            </p>
+          </div>
+
+          <div class="about-footer-row">
+            <div class="signature-script-wrap">
+              <div class="signature-script" aria-label="LaMar Joevell Signature">LaMar Joevell</div>
+              <svg class="signature-flourish" viewBox="0 0 180 18" fill="none" aria-hidden="true">
+                <path d="M4 13 C 46 3, 114 2, 174 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <div class="about-credentials">
+              <span class="stamp-rule" aria-hidden="true"></span>
+              <p>FASHION ENTHUSIAST</p>
+              <p>UGC CREATOR</p>
+              <p>VISUAL STORYTELLER</p>
+              <p>SAN DIEGO, CA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RESULTS & CASE STUDIES SECTION -->
+    <section class="results-section" id="results" data-reveal-section>
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <div class="eyebrow-row">
+              <span class="eyebrow-text">BRAND PARTNERSHIPS</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h2 class="section-title">RESULTS &amp; CASE STUDIES</h2>
+          </div>
+
+          <div class="results-header-right">
+            <p class="section-subtitle" id="resultsSubtitle">
+              Here's where you can showcase campaign results, testimonials, or key performance metrics from past brand collaborations.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-studies-grid" id="caseStudiesGrid"></div>
+      </div>
+    </section>
+
+    <!-- 6. WORK WITH ME / CONTACT SECTION -->
+    <section class="contact-section" id="contact" data-reveal-section>
+      <div class="container contact-grid">
+        <div class="contact-photo-wrap">
+          <img
+            id="contactPortraitImg"
+            src="/media/1U6A5938.JPG"
+            alt="LaMar Joevell side profile"
+            loading="lazy"
+            width="600"
+            height="720"
+            class="contact-photo"
+          />
+        </div>
+
+        <div class="contact-center">
+          <div class="eyebrow-row">
+            <span class="eyebrow-text">WORK WITH ME</span>
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title">LET'S MAKE SOMETHING.</h2>
+          <p class="contact-lead">
+            I'm always open to new brand partnerships, creative projects, and exciting opportunities. Let's create content that connects.
+          </p>
+          <button type="button" class="btn-olive btn-lg magnetic-btn" id="requestRatesBtn">
+            <span>REQUEST RATES</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+
+        <div class="contact-links-list">
+          <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" class="contact-list-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </span>
+            <span>@lamarsfashion</span>
+          </a>
+
+          <div class="contact-list-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            </span>
+            <span>@lamarsfashion</span>
+          </div>
+
+          <div class="contact-list-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </span>
+            <span>@lamarsfashion</span>
+          </div>
+
+          <a href="#contact" class="contact-list-item" id="emailContactLink">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </span>
+            <span>lamarjoevell@gmail.com</span>
+          </a>
+
+          <div class="contact-list-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </span>
+            <span>San Diego, California</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. DARK FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="#top" class="footer-logo">LaMar Joevell</a>
+        <p class="footer-pillars">
+          UGC CREATOR &nbsp;&bull;&nbsp; FASHION &nbsp;&bull;&nbsp; LIFESTYLE &nbsp;&bull;&nbsp; PRODUCT STORYTELLING
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#results">Results</a>
+          <a href="#contact">Contact</a>
+          <button type="button" class="footer-studio-trigger is-hidden" id="footerStudioBtn" title="Toggle Creator Upload Studio">Creator Studio</button>
+        </nav>
+
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/lamarsfashion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#contact" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+          <a href="#contact" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#contact" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.44l1.4-5.95s-.36-.72-.36-1.78c0-1.66.96-2.9 2.16-2.9 1.02 0 1.51.77 1.51 1.68 0 1.02-.65 2.56-.99 3.98-.28 1.19.6 2.16 1.77 2.16 2.13 0 3.77-2.25 3.77-5.5 0-2.87-2.06-4.88-5.01-4.88-3.41 0-5.42 2.56-5.42 5.2 0 1.03.4 2.13.89 2.73.1.12.11.22.08.34l-.33 1.36c-.05.22-.18.27-.41.16-1.56-.72-2.53-3-2.53-4.83 0-3.93 2.86-7.55 8.24-7.55 4.33 0 7.7 3.08 7.7 7.2 0 4.3-2.71 7.76-6.47 7.76-1.26 0-2.45-.66-2.86-1.44l-.78 2.97c-.28 1.08-1.04 2.44-1.55 3.27A12 12 0 1 0 12 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHT-DISMISS DIALOG 1: VERTICAL VIDEO / REEL PLAYER MODAL -->
+  <dialog id="reelPlayerDialog" class="modal-dialog reel-dialog" closedby="any" aria-labelledby="reelDialogTitle">
+    <div class="reel-modal-inner">
+      <div class="reel-modal-header">
+        <div>
+          <span class="modal-eyebrow" id="reelDialogBadge">SELECTED WORK</span>
+          <h3 id="reelDialogTitle" class="modal-title">STYLING TUTORIAL</h3>
+        </div>
+        <div class="reel-modal-header-actions">
+          <span class="reel-counter-pill" id="reelDialogCounter" aria-live="polite">1 / 8</span>
+          <button type="button" class="modal-close-btn" data-close-dialog="reelPlayerDialog" aria-label="Close video player">&times;</button>
+        </div>
+      </div>
+
+      <div class="reel-stage">
+        <div class="reel-story-segments" id="reelStorySegments" aria-hidden="true"></div>
+
+        <button type="button" class="reel-modal-nav reel-modal-prev" id="reelModalPrevBtn" aria-label="Previous reel (Left Arrow)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <button type="button" class="reel-modal-nav reel-modal-next" id="reelModalNextBtn" aria-label="Next reel (Right Arrow)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        <video id="reelModalVideo" class="reel-video-el is-hidden" controls playsinline preload="none"></video>
+        <div id="reelPosterContainer" class="reel-poster-container">
+          <img id="reelModalPoster" class="reel-poster-el" src="/media/1U6A8760.JPG" alt="Reel preview" fetchpriority="low" />
+          <div class="reel-coming-soon-banner" id="reelComingSoonBanner">
+            <span class="coming-soon-dot" aria-hidden="true"></span>
+            <span>Placeholder Still &mdash; Final UGC Reel Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Studio Upload Footer (Only visible in ?edit / Creator Studio mode) -->
+      <div class="reel-modal-footer is-hidden" id="reelModalEditFooter">
+        <label class="btn-outline-sm upload-inline-label">
+          <input type="file" id="inlineVideoUploadInput" accept="video/mp4,video/quicktime,video/webm,image/*" hidden />
+          <span>Upload / Replace Video for This Slot</span>
+        </label>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- LIGHT-DISMISS DIALOG 2: UPLOAD & CUSTOMIZE STUDIO MODAL (?edit mode) -->
+  <dialog id="studioDialog" class="modal-dialog studio-dialog" closedby="any" aria-labelledby="studioDialogTitle">
+    <div class="studio-modal-inner">
+      <div class="studio-modal-header">
+        <div>
+          <span class="modal-eyebrow">CREATOR STUDIO PREVIEW MODE</span>
+          <h3 id="studioDialogTitle" class="modal-title">UPLOAD VIDEOS &amp; SWAP PHOTOS</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-dialog="studioDialog" aria-label="Close studio">&times;</button>
+      </div>
+
+      <p class="studio-helper-text">
+        Preview mode for pitching LaMar: test swapping any photo from his Dropbox shoot or attaching a local <code>.MP4</code> / <code>.MOV</code> clip to any <strong>Selected Work</strong> card.
+      </p>
+
+      <div class="studio-section">
+        <h4 class="studio-section-heading">1. Main Page Portrait Switcher</h4>
+        <div class="studio-slot-row" id="mainPortraitSwitcher"></div>
+      </div>
+
+      <div class="studio-section">
+        <h4 class="studio-section-heading">2. Selected Work Cards (Attach Video or Change Thumbnail)</h4>
+        <div class="studio-reels-list" id="studioReelsList"></div>
+      </div>
+
+      <div class="studio-modal-actions">
+        <button type="button" class="btn-outline-sm" id="resetStudioDefaultsBtn">Reset to Default Dropbox Picks</button>
+        <button type="button" class="btn-olive btn-sm" data-close-dialog="studioDialog">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- LIGHT-DISMISS DIALOG 3: REQUEST RATES / MEDIA KIT MODAL -->
+  <dialog id="ratesDialog" class="modal-dialog rates-dialog" closedby="any" aria-labelledby="ratesDialogTitle">
+    <div class="rates-modal-inner">
+      <div class="studio-modal-header">
+        <div>
+          <span class="modal-eyebrow">WORK WITH LAMAR JOEVELL</span>
+          <h3 id="ratesDialogTitle" class="modal-title">REQUEST RATES &amp; PACKAGES</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-dialog="ratesDialog" aria-label="Close rates dialog">&times;</button>
+      </div>
+
+      <form id="ratesForm" class="rates-form">
+        <div class="form-row">
+          <label for="brandNameInput">Brand / Agency Name</label>
+          <input id="brandNameInput" type="text" required placeholder="e.g. Nike, PacSun, Menswear Co." />
+        </div>
+        <div class="form-row">
+          <label for="brandEmailInput">Your Email</label>
+          <input id="brandEmailInput" type="email" required placeholder="partnerships@brand.com" />
+        </div>
+        <div class="form-row">
+          <label for="deliverableSelect">Content Package Needed</label>
+          <select id="deliverableSelect">
+            <option value="UGC Paid Ads Bundle (3-5 Videos)">UGC Paid Ads Bundle (3–5 Videos)</option>
+            <option value="Organic Reels / TikTok Styling Series">Organic Reels / TikTok Styling Series</option>
+            <option value="Product Demonstration + Raw Hook Variations">Product Demonstration + Raw Hook Variations</option>
+            <option value="Monthly Creator Retainer">Monthly Creator Retainer</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="projectNotesInput">Campaign Details</label>
+          <textarea id="projectNotesInput" rows="3" placeholder="Tell LaMar about your product, timeline, and goals..."></textarea>
+        </div>
+        <div class="rates-form-footer">
+          <button type="submit" class="btn-olive btn-lg" style="width:100%;justify-content:center;">
+            <span>SEND INQUIRY TO LAMAR</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
