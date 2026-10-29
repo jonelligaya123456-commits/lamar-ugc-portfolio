@@ -508,7 +508,7 @@ function setupScrollRevealAndSpy() {
   revealSections.forEach((sec) => revealObserver.observe(sec));
 
   // Scroll-spy for top navigation
-  const spyTargets = ['work', 'services', 'numbers', 'rates', 'about', 'contact']
+  const spyTargets = ['work', 'services', 'numbers', 'about', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
