@@ -722,6 +722,102 @@ function renderStudioControls() {
   });
 }
 
+function setupNumbersCounterAnimation() {
+  const numbersSection = document.getElementById('numbers');
+  const counterElements = document.querySelectorAll('.hud-stat-value[data-counter]');
+
+  if (!numbersSection || counterElements.length === 0) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const counters = Array.from(counterElements).map((el) => {
+    const target = parseFloat(el.getAttribute('data-counter')) || 0;
+    const format = el.getAttribute('data-format') || 'int';
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const finalDisplay = el.textContent.trim();
+
+    const formatValue = (current) => {
+      let numStr = '';
+      if (format === 'int') {
+        numStr = Math.round(current).toLocaleString('en-US');
+      } else if (format === 'decimal1') {
+        numStr = current.toFixed(1);
+      } else {
+        numStr = current.toString();
+      }
+      return `${prefix}${numStr}${suffix}`;
+    };
+
+    return {
+      el,
+      target,
+      finalDisplay,
+      formatValue
+    };
+  });
+
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  // Initialize display to zero values before rolling up
+  counters.forEach(({ el, formatValue }) => {
+    el.textContent = formatValue(0);
+  });
+
+  let hasAnimated = false;
+
+  const runAnimation = () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    const duration = 1800; // ms
+    const startTime = performance.now();
+    const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+
+    const frame = (now) => {
+      const elapsed = now - startTime;
+      const rawProgress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutExpo(rawProgress);
+
+      counters.forEach(({ el, target, finalDisplay, formatValue }) => {
+        if (rawProgress >= 1) {
+          el.textContent = finalDisplay;
+        } else {
+          el.textContent = formatValue(target * easedProgress);
+        }
+      });
+
+      if (rawProgress < 1) {
+        requestAnimationFrame(frame);
+      }
+    };
+
+    requestAnimationFrame(frame);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runAnimation();
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+    observer.observe(numbersSection);
+  } else {
+    runAnimation();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupDialogLightDismissFallbacks();
   updateEditModeUI();
@@ -729,6 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStudioControls();
   setupScrollRevealAndSpy();
   setupEditorialInteractions();
+  setupNumbersCounterAnimation();
 
   // Mobile Menu Drawer Toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
