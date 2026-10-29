@@ -724,7 +724,7 @@ function renderStudioControls() {
 
 function setupNumbersCounterAnimation() {
   const numbersSection = document.getElementById('numbers');
-  const counterElements = document.querySelectorAll('.hud-stat-value[data-counter]');
+  const counterElements = document.querySelectorAll('.stat-value[data-counter], .hud-stat-value[data-counter]');
 
   if (!numbersSection || counterElements.length === 0) return;
 
@@ -772,14 +772,14 @@ function setupNumbersCounterAnimation() {
     if (hasAnimated) return;
     hasAnimated = true;
 
-    const duration = 1800; // ms
+    const duration = 1500; // ms
     const startTime = performance.now();
-    const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
     const frame = (now) => {
       const elapsed = now - startTime;
       const rawProgress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeOutExpo(rawProgress);
+      const easedProgress = easeOutCubic(rawProgress);
 
       counters.forEach(({ el, target, finalDisplay, formatValue }) => {
         if (rawProgress >= 1) {

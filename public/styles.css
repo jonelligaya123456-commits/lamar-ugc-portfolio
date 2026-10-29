@@ -40,6 +40,10 @@ body {
   overflow-x: hidden;
 }
 
+section[id] {
+  scroll-margin-top: 75px;
+}
+
 img,
 video {
   display: block;
@@ -802,31 +806,10 @@ button {
 }
 
 /* ==========================================
-   5. THE NUMBERS / CREATOR PERFORMANCE (TECH HUD)
+   4. THE NUMBERS / CREATOR PERFORMANCE
    ========================================== */
-.tech-mono {
-  font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-  letter-spacing: 0.06em;
-}
-
-.tech-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #2E7D32;
-  box-shadow: 0 0 8px rgba(46, 125, 50, 0.6);
-  display: inline-block;
-  margin-right: 8px;
-  animation: techPulse 2s infinite ease-in-out;
-}
-
-@keyframes techPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.45; transform: scale(0.85); }
-}
-
 .numbers-section {
-  padding-block: 48px 36px;
+  padding-block: 56px 44px;
   border-top: 1px solid var(--border-subtle);
   background-color: var(--bg-page);
 }
@@ -836,103 +819,80 @@ button {
   align-items: center;
 }
 
-.tech-handle-badge {
+.numbers-header-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 14px;
-  background: #181916;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 999px;
-  color: #EDE8DE;
-  font-family: ui-monospace, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-}
-
-.tech-live-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px 8px;
-  background: rgba(46, 125, 50, 0.25);
-  border: 1px solid rgba(76, 175, 80, 0.4);
-  border-radius: 999px;
-  color: #81C784;
-  font-weight: 700;
-  font-size: 0.62rem;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.tech-live-pill .pulse-dot,
-.hud-pulse-chip .pulse-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #4CAF50;
-  display: inline-block;
-  animation: techPulse 1.6s infinite ease-in-out;
+.numbers-handle-tag {
+  font-weight: 700;
+  color: var(--text-main);
+  transition: color 0.2s ease;
 }
 
-.tech-handle-text {
+.numbers-handle-tag:hover {
+  color: var(--accent-terracotta);
+}
+
+.numbers-badge-divider {
+  color: rgba(22, 22, 20, 0.25);
+}
+
+.numbers-badge-date {
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: var(--text-soft);
 }
 
-.tech-audit-date {
-  color: #9E988D;
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-  padding-left: 8px;
-}
-
-.numbers-hud-grid {
+.numbers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-top: 26px;
-  margin-bottom: 20px;
+  margin-top: 28px;
+  margin-bottom: 22px;
 }
 
-.hud-card {
-  background: #EAE6DD;
-  border: 1px solid rgba(22, 22, 20, 0.12);
-  border-radius: 4px;
-  padding: 22px 22px 18px;
+.stat-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 26px 24px 22px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hud-card:hover {
+.stat-card:hover {
+  background-color: var(--bg-card-hover);
   transform: translateY(-2px);
-  border-color: rgba(22, 22, 20, 0.26);
-  box-shadow: 0 6px 18px rgba(22, 22, 20, 0.05);
+  box-shadow: 0 8px 24px rgba(22, 22, 20, 0.04);
 }
 
-.hud-card-top {
+.stat-card-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
+  justify-content: flex-end;
+  margin-bottom: 6px;
 }
 
-.hud-tag {
-  font-family: ui-monospace, monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
+.stat-card-index {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
   color: var(--text-soft);
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.hud-corner-bracket {
-  width: 9px;
-  height: 9px;
-  border-top: 2px solid rgba(22, 22, 20, 0.25);
-  border-right: 2px solid rgba(22, 22, 20, 0.25);
-}
-
-.hud-stat-value {
+.stat-value {
   font-family: var(--font-display);
   font-size: 3.4rem;
   line-height: 0.95;
@@ -942,88 +902,62 @@ button {
   margin-bottom: 8px;
 }
 
-.hud-stat-growth {
-  color: #1B4D1B;
-}
-
-.hud-card-highlight {
-  background: #E5EADF;
-  border-color: rgba(46, 125, 50, 0.35);
-}
-
-.hud-card-highlight:hover {
-  border-color: rgba(46, 125, 50, 0.6);
-}
-
-.hud-pulse-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 2px 7px;
-  background: rgba(46, 125, 50, 0.18);
-  border: 1px solid rgba(46, 125, 50, 0.38);
-  border-radius: 999px;
-  color: #1B4D1B;
-  font-family: ui-monospace, monospace;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-
-.hud-stat-label {
-  font-size: 0.72rem;
+.stat-label {
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 
-.hud-stat-desc {
-  font-size: 0.74rem;
-  line-height: 1.4;
+.stat-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
   color: var(--text-soft);
   margin-top: 4px;
 }
 
-/* Tech Console Banner */
-.tech-console-banner {
-  background: #141412;
-  color: #EDE8DE;
-  border-radius: 4px;
-  border-left: 3px solid #38A169;
-  padding: 16px 20px;
+/* Editorial Callout: Beyond The Follower Count */
+.numbers-callout {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-terracotta);
+  border-radius: 3px;
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  margin-top: 4px;
 }
 
-.tech-console-bar {
+.numbers-callout-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.tech-console-prefix {
-  font-family: ui-monospace, monospace;
+.numbers-callout-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.numbers-callout-sub {
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #48BB78;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
 }
 
-.tech-console-status {
-  font-family: ui-monospace, monospace;
-  font-size: 0.64rem;
-  color: #A0AEC0;
-  letter-spacing: 0.06em;
-}
-
-.tech-console-quote {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #D2CDC3;
+.numbers-callout-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
 }
 
 /* ==========================================
@@ -2105,6 +2039,7 @@ a.contact-list-item:hover {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .numbers-grid,
   .numbers-hud-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2156,11 +2091,13 @@ a.contact-list-item:hover {
   .numbers-header-right {
     margin-top: 12px;
   }
+  .numbers-header-badge,
   .tech-handle-badge {
     width: 100%;
     justify-content: space-between;
     font-size: 0.68rem;
   }
+  .numbers-grid,
   .numbers-hud-grid {
     grid-template-columns: 1fr;
   }
