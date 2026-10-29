@@ -239,7 +239,6 @@ function renderReelsCarousel() {
           style="--stagger-idx: ${idx}"
           role="button"
           tabindex="0"
-          aria-label="Preview ${item.titlePlain}"
         >
           <img src="${item.thumb}" alt="${item.titlePlain}" ${priorityAttrs} width="450" height="800" class="reel-thumb" />
           ${inlineVideoHtml}
