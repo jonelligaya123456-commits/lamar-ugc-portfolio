@@ -252,6 +252,30 @@ button {
   background: var(--bg-card);
 }
 
+.btn-outline-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(22, 22, 20, 0.25);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-outline-editorial:hover {
+  background-color: rgba(22, 22, 20, 0.06);
+  border-color: var(--text-main);
+  transform: translateY(-1px);
+}
+
 /* ==========================================
    SHARED EYEBROWS & SECTION HEADERS
    ========================================== */
@@ -477,7 +501,7 @@ button {
    2. SELECTED WORK SECTION
    ========================================== */
 .work-section {
-  padding-block: 64px 48px;
+  padding-block: 40px 32px;
 }
 
 .work-header-right {
@@ -638,7 +662,7 @@ button {
    3. SERVICES / WHAT I CREATE SECTION
    ========================================== */
 .services-section {
-  padding-block: 44px 68px;
+  padding-block: 36px 36px;
 }
 
 .services-grid {
@@ -693,7 +717,7 @@ button {
 .about-section {
   background-color: #EFECE4;
   border-block: 1px solid var(--border-subtle);
-  padding-block: 56px;
+  padding-block: 44px 36px;
 }
 
 .about-grid {
@@ -778,100 +802,462 @@ button {
 }
 
 /* ==========================================
-   5. RESULTS & CASE STUDIES SECTION
+   5. THE NUMBERS / CREATOR PERFORMANCE (TECH HUD)
    ========================================== */
-.results-section {
-  padding-block: 64px;
+.tech-mono {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.06em;
 }
 
-.results-header-right {
+.tech-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2E7D32;
+  box-shadow: 0 0 8px rgba(46, 125, 50, 0.6);
+  display: inline-block;
+  margin-right: 8px;
+  animation: techPulse 2s infinite ease-in-out;
+}
+
+@keyframes techPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+.numbers-section {
+  padding-block: 48px 36px;
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-page);
+}
+
+.numbers-header-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.tech-handle-badge {
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
+  padding: 6px 14px;
+  background: #181916;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #EDE8DE;
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
 }
 
-.case-studies-grid {
+.tech-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  background: rgba(46, 125, 50, 0.25);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  border-radius: 999px;
+  color: #81C784;
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.tech-live-pill .pulse-dot,
+.hud-pulse-chip .pulse-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  display: inline-block;
+  animation: techPulse 1.6s infinite ease-in-out;
+}
+
+.tech-handle-text {
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.tech-audit-date {
+  color: #9E988D;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  padding-left: 8px;
+}
+
+.numbers-hud-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 16px;
+  margin-top: 26px;
+  margin-bottom: 20px;
 }
 
-.case-card {
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  background-color: #EFECE4;
-  border: 1px solid rgba(22, 22, 20, 0.08);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.case-thumb-wrap {
-  height: 100%;
-  min-height: 175px;
-  background: #D8D2C5;
-}
-
-.case-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.case-body {
-  padding: 18px 18px 16px;
+.hud-card {
+  background: #EAE6DD;
+  border: 1px solid rgba(22, 22, 20, 0.12);
+  border-radius: 4px;
+  padding: 22px 22px 18px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hud-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 22, 20, 0.26);
+  box-shadow: 0 6px 18px rgba(22, 22, 20, 0.05);
+}
+
+.hud-card-top {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 12px;
 }
 
-.case-brand {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  letter-spacing: 0.03em;
-  color: var(--text-main);
-  margin-bottom: 4px;
-}
-
-.case-desc {
-  font-size: 0.74rem;
-  line-height: 1.45;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-}
-
-.case-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(22, 22, 20, 0.09);
-}
-
-.metric-item {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.metric-value {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  line-height: 1.02;
-  color: var(--text-main);
+.hud-tag {
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-soft);
   text-transform: uppercase;
 }
 
-.metric-value.is-large {
-  font-size: 1.35rem;
+.hud-corner-bracket {
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid rgba(22, 22, 20, 0.25);
+  border-right: 2px solid rgba(22, 22, 20, 0.25);
 }
 
-.metric-label {
-  font-size: 0.55rem;
+.hud-stat-value {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.hud-stat-growth {
+  color: #1B4D1B;
+}
+
+.hud-card-highlight {
+  background: #E5EADF;
+  border-color: rgba(46, 125, 50, 0.35);
+}
+
+.hud-card-highlight:hover {
+  border-color: rgba(46, 125, 50, 0.6);
+}
+
+.hud-pulse-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  background: rgba(46, 125, 50, 0.18);
+  border: 1px solid rgba(46, 125, 50, 0.38);
+  border-radius: 999px;
+  color: #1B4D1B;
+  font-family: ui-monospace, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hud-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hud-stat-desc {
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: var(--text-soft);
+  margin-top: 4px;
+}
+
+/* Tech Console Banner */
+.tech-console-banner {
+  background: #141412;
+  color: #EDE8DE;
+  border-radius: 4px;
+  border-left: 3px solid #38A169;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tech-console-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tech-console-prefix {
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #48BB78;
+}
+
+.tech-console-status {
+  font-family: ui-monospace, monospace;
+  font-size: 0.64rem;
+  color: #A0AEC0;
+  letter-spacing: 0.06em;
+}
+
+.tech-console-quote {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #D2CDC3;
+}
+
+/* ==========================================
+   6. COLLABORATION RATES & PACKAGES SECTION
+   ========================================== */
+.rates-section {
+  padding-block: 48px 36px;
+  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, var(--bg-page) 0%, #EDE9DF 100%);
+}
+
+.rates-layout-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 22px;
+  margin-top: 26px;
+  align-items: start;
+}
+
+.rates-table-card {
+  background: #F7F5F0;
+  border: 1px solid rgba(22, 22, 20, 0.12);
+  border-radius: 4px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rates-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(22, 22, 20, 0.1);
+}
+
+.rates-header-tag {
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  padding: 2px 8px;
+  background: rgba(22, 22, 20, 0.07);
+  border-radius: 3px;
+  color: var(--text-main);
+}
+
+.rate-rows-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 13px;
+  border-bottom: 1px solid rgba(22, 22, 20, 0.07);
+}
+
+.rate-row-item:last-child {
+  border-bottom: none;
+}
+
+.rate-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rate-deliverable-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.rate-deliverable-desc {
+  font-size: 0.73rem;
+  line-height: 1.4;
   color: var(--text-soft);
+}
+
+.rate-row-price {
+  font-family: ui-monospace, monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.rates-table-action {
+  padding-top: 6px;
+}
+
+/* Packages Column */
+.packages-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.package-card {
+  background: #F7F5F0;
+  border: 1px solid rgba(22, 22, 20, 0.12);
+  border-radius: 4px;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 22, 20, 0.24);
+  box-shadow: 0 6px 18px rgba(22, 22, 20, 0.05);
+}
+
+.package-card-featured {
+  background: #FDFBF7;
+  border: 2px solid var(--accent-olive);
+  box-shadow: 0 4px 16px rgba(45, 50, 35, 0.08);
+}
+
+.package-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.package-badge {
+  font-family: ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  background: rgba(22, 22, 20, 0.08);
+  border-radius: 3px;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.package-badge-collab {
+  background: #EAE3D2;
+  color: #5C4724;
+}
+
+.package-badge-best {
+  background: var(--accent-olive);
+  color: #FFFFFF;
+}
+
+.package-price {
+  font-family: ui-monospace, monospace;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.package-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+.package-desc {
+  font-size: 0.77rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.package-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-block: 4px;
+  padding-left: 0;
+}
+
+.package-bullets li {
+  font-size: 0.74rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.package-bullets li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent-olive);
+}
+
+.package-card .btn-olive {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* Rates Terms Card */
+.rates-terms-card {
+  margin-top: 18px;
+  background: #EAE6DD;
+  border: 1px dashed rgba(22, 22, 20, 0.22);
+  border-radius: 4px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rates-terms-tag {
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.rates-terms-text {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 /* ==========================================
@@ -1953,7 +2339,10 @@ a.contact-list-item:hover {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .case-studies-grid {
+  .numbers-hud-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rates-layout-grid {
     grid-template-columns: 1fr;
   }
   .contact-grid {
@@ -1996,10 +2385,25 @@ a.contact-list-item:hover {
     align-items: flex-start;
   }
   .work-header-right,
-  .results-header-right {
+  .numbers-header-right {
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+  }
+  .numbers-header-right {
+    margin-top: 12px;
+  }
+  .tech-handle-badge {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.68rem;
+  }
+  .numbers-hud-grid {
+    grid-template-columns: 1fr;
+  }
+  .package-card .btn-olive {
+    width: 100%;
+    justify-content: center;
   }
   .work-carousel-track {
     grid-auto-columns: calc((100% - 14px) / 2.15);

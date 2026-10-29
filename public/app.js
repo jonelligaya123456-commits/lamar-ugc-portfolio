@@ -85,36 +85,6 @@ const DEFAULT_REELS = [
   }
 ];
 
-const CASE_STUDIES = [
-  {
-    thumb: '/media/1U6A8754.JPG',
-    brand: 'BRAND NAME',
-    desc: 'Add a brief description of the campaign and your role.',
-    m1Val: '+X%',
-    m1Large: true,
-    m2Val: 'ANOTHER<br />METRIC',
-    m3Val: 'A THIRD<br />METRIC'
-  },
-  {
-    thumb: '/media/3G1A0001.JPG',
-    brand: 'BRAND NAME',
-    desc: 'Add a brief description of the campaign and your role.',
-    m1Val: '+X%',
-    m1Large: true,
-    m2Val: 'ANOTHER<br />METRIC',
-    m3Val: 'A THIRD<br />METRIC'
-  },
-  {
-    thumb: '/media/3G1A9873.JPG',
-    brand: 'BRAND NAME',
-    desc: 'Add a brief description of the campaign and your role.',
-    m1Val: '+X%',
-    m1Large: true,
-    m2Val: 'ANOTHER<br />METRIC',
-    m3Val: 'A THIRD<br />METRIC'
-  }
-];
-
 let reelsState = structuredClone(DEFAULT_REELS);
 let activeReelIndex = 0;
 let isEditMode = new URLSearchParams(window.location.search).has('edit');
@@ -521,39 +491,6 @@ function updateCarouselProgress() {
   fill.style.transform = `translateX(${(scrollRatio * maxTranslatePct).toFixed(2)}%)`;
 }
 
-function renderCaseStudies() {
-  const grid = document.getElementById('caseStudiesGrid');
-  if (!grid) return;
-
-  grid.innerHTML = CASE_STUDIES.map(
-    (item, idx) => `
-      <article class="case-card" style="--stagger-idx: ${idx}">
-        <div class="case-thumb-wrap">
-          <img src="${item.thumb}" alt="Brand Campaign Case Study ${idx + 1}" loading="lazy" width="320" height="400" class="case-thumb" />
-        </div>
-        <div class="case-body">
-          <h3 class="case-brand">${item.brand}</h3>
-          <p class="case-desc">${item.desc}</p>
-          <div class="case-metrics">
-            <div class="metric-item">
-              <span class="metric-value ${item.m1Large ? 'is-large' : ''}">${item.m1Val}</span>
-              <span class="metric-label">VIEWS</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-value">${item.m2Val}</span>
-              <span class="metric-label">ENGAGEMENT</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-value">${item.m3Val}</span>
-              <span class="metric-label">CONVERSIONS</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    `
-  ).join('');
-}
-
 function setupScrollRevealAndSpy() {
   const revealSections = document.querySelectorAll('[data-reveal-section]');
   const navLinks = document.querySelectorAll('.main-nav a[data-nav-section]');
@@ -572,7 +509,7 @@ function setupScrollRevealAndSpy() {
   revealSections.forEach((sec) => revealObserver.observe(sec));
 
   // Scroll-spy for top navigation
-  const spyTargets = ['work', 'services', 'about', 'results', 'contact']
+  const spyTargets = ['work', 'services', 'numbers', 'rates', 'about', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
@@ -790,7 +727,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDialogLightDismissFallbacks();
   updateEditModeUI();
   renderReelsCarousel();
-  renderCaseStudies();
   renderStudioControls();
   setupScrollRevealAndSpy();
   setupEditorialInteractions();
@@ -1020,6 +956,19 @@ document.addEventListener('DOMContentLoaded', () => {
       ratesDialog.showModal();
     });
   }
+
+  // Pre-fill and open rates dialog from rate cards / package buttons
+  document.querySelectorAll('.btn-rate-inquire').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (!ratesDialog) return;
+      const prefill = btn.getAttribute('data-prefill');
+      const select = document.getElementById('deliverableSelect');
+      if (prefill && select) {
+        select.value = prefill;
+      }
+      ratesDialog.showModal();
+    });
+  });
 
   if (emailContactLink && ratesDialog) {
     emailContactLink.addEventListener('click', (e) => {
